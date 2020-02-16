@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生列表</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>计数</th>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年级</th>
+            <th>电话</th>
+            <th>地址</th>
+        </tr>
+        <tr th:each="student,iterStat : ${page.content}">
+            <td th:text="${iterStat.count}">1</td>
+            <td th:text="${student.studentNo}">1</td>
+            <td th:text="${student.studentName}">刻意练习清单</td>
+            <td th:text="${student.sex}">认知升级</td>
+            <td th:text="${student.gradeId}">是</td>
+            <td th:text="${student.phone}">草稿</td>
+            <td th:text="${student.address}">2017-10-02 09:45</td>
+        </tr>
+    </table>
+        <br>
+    <a th:href="@{/students(page=${page.number}-1)}" class="  item" th:unless="${page.first}">上一页</a>
+    <a th:href="@{/students(page=${page.number}+1)}" class=" item" th:unless="${page.last}">下一页</a>
+    </body>
+</html>
