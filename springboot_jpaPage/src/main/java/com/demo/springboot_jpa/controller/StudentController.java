@@ -20,7 +20,7 @@ public class StudentController {
     public String students(@PageableDefault(size = 3,sort = {"studentNo"},direction = Sort.Direction.ASC) Pageable pageable,
                            Model model){
         //我日了狗了
-        //BBBBBB
+        //AAAAAA
         model.addAttribute("page",studentService.listStudents(pageable));
         System.out.println("studentList:"+studentService.listStudents(pageable));
         return "student/studentList";
