@@ -19,6 +19,8 @@ public class StudentController {
     @RequestMapping("/students")
     public String students(@PageableDefault(size = 3,sort = {"studentNo"},direction = Sort.Direction.ASC) Pageable pageable,
                            Model model){
+        //我日了狗了
+        //BBBBBB
         model.addAttribute("page",studentService.listStudents(pageable));
         System.out.println("studentList:"+studentService.listStudents(pageable));
         return "student/studentList";
